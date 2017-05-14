@@ -32,11 +32,11 @@ try
 	AnnealingSettings settings{ 
 		euclidean_distance, // distance function
 		probabilityFunction, // probability function
-		1e-35f, // min temp
-		1e+10f, // t0
+		1e-30f, // min temp
+		1e+16f, // t0
 		.97f, // temp modifier
 		0.05f, // best solution improvement
-		15, // best solution improvement counter
+		10, // best solution improvement counter
 		5
 	};
 
