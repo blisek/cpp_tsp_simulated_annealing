@@ -34,6 +34,7 @@ void AnnealingSolver::solve()
 	float lastPathLength = workingSolution.getPathLength();
 	while (currTemp > minTemp)
 	{
+#ifndef DISABLE_NEW_SOL_PEEK
 		if (bestSolutionImprovementLimitCounter <= 0)
 		{
 			for (int counter = 0; counter < annealingSettings.generatingBetterSolutionTries; ++counter)
@@ -48,6 +49,7 @@ void AnnealingSolver::solve()
 			}
 			bestSolutionImprovementLimitCounter = annealingSettings.bestSolutionImprovementMaxCounter;
 		}
+#endif
 
 		auto changedIndices = randomSwitch(&inputData, workingSolution, randomEngine);
 		auto newPathLength = workingSolution.getPathLength();

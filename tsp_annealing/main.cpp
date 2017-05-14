@@ -5,6 +5,9 @@
 #include <utility>
 #include <memory>
 #include <algorithm>
+
+//#define DISABLE_NEW_SOL_PEEK
+
 #include "InputData.h"
 #include "SolutionPath.h"
 #include "Helpers.h"
@@ -33,10 +36,10 @@ try
 		euclidean_distance, // distance function
 		probabilityFunction, // probability function
 		1e-30f, // min temp
-		1e+16f, // t0
-		.97f, // temp modifier
+		1e+15f, // t0
+		.98f, // temp modifier
 		0.05f, // best solution improvement
-		10, // best solution improvement counter
+		15, // best solution improvement counter
 		5
 	};
 
