@@ -50,19 +50,19 @@ public:
 			generateSimplePath(inputData);
 		}
 	}
-	
+
 	S getPathLength() const;
 	auto begin(bool modified = false) -> decltype(path.begin())
-	{ 
+	{
 		if (modified)
 			pathChanged = true;
-		return path.begin(); 
+		return path.begin();
 	}
 	auto end(bool modified = false) -> decltype(path.end())
-	{ 
+	{
 		if (modified)
 			pathChanged = true;
-		return path.end(); 
+		return path.end();
 	}
 	auto cbegin() -> decltype(path.cbegin()) const { return path.cbegin(); }
 	auto cend() -> decltype(path.cend()) const { return path.cend(); }
@@ -79,7 +79,7 @@ public:
 	}
 
 	S getElement(int index) const { return path[index]; }
-	S getLastElement() const { return path[path.size() - 1] };
+	S getLastElement() const { return path[path.size() - 1]; }
 	S getFirstElement() const { return path[0]; }
 };
 
@@ -119,7 +119,7 @@ inline void SolutionPath<T, S>::updateDistance(const InputData<T, S>* inputData,
 
 	auto& previousElement = path[previousIndex];
 	auto& nextElement = path[nextIndex];
-	
+
 	auto previousElementDiff = -previousElement.distance;
 	previousElementDiff += (previousElement.distance = inputData->getDistanceBetweenVertices(previousElement.vertex, element.vertex));
 
